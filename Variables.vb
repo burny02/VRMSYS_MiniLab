@@ -13,6 +13,7 @@ Module Variables
     Public Const SolutionName As String = "VRMSYS - Mini Lab"
     Public SiteForm As Site
     Public PickCohort As Long
+    Public AppID As Long
 
     Public Function GetTheConnection() As String
         GetTheConnection = Connect2

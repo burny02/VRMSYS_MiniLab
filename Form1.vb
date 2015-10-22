@@ -93,7 +93,7 @@
                 If IsNothing(Me.ComboBox3.SelectedValue) Then Exit Sub
 
                 SQLCode = "SELECT Result_ID, Patient_Attendees_ID & ' - ' & Format(Date_Of_Birth,'dd-MMM-yyyy') AS Volunteer, " & _
-                    "Start, Result, Batch_No, Lab_QC_Person, Lab_QC_Date, Released " & _
+                    "Start, Result, Batch_No, Lab_QC_Person & ' - ' & Format(Lab_QC_Date,'dd-MMM-yyyy') AS QC, Released " & _
                     "FROM (tblAppointments a INNER JOIN " & _
                     "tblApp_Results b ON a.ID=b.APP_ID) INNER JOIN tblPatientDemographics c " & _
                     " ON a.Patient_Attendees_ID=c.ID " & _
@@ -107,15 +107,11 @@
                 ctl.Columns("Result").Visible = False
                 ctl.Columns("Start").HeaderText = "Collection Date"
                 ctl.Columns("Start").DefaultCellStyle.Format = "dd-MMM-yyyy"
-                ctl.Columns("Lab_QC_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
-                ctl.Columns("Lab_QC_Person").HeaderText = "QC'd By"
-                ctl.Columns("Lab_QC_Date").HeaderText = "QC'd Date"
                 ctl.Columns("Volunteer").ReadOnly = True
                 ctl.Columns("Start").ReadOnly = True
                 ctl.Columns("Batch_No").ReadOnly = True
                 ctl.Columns("Result").ReadOnly = True
-                ctl.Columns("Lab_QC_Person").ReadOnly = True
-                ctl.Columns("Lab_QC_Date").ReadOnly = True
+                ctl.Columns("QC").ReadOnly = True
 
                 Dim dt As DataTable
                 Dim cmb As New DataGridViewComboBoxColumn
@@ -134,13 +130,14 @@
                 cmb.ReadOnly = True
                 ctl.Columns.Add(cmb)
 
-                ctl.Columns("Released").DisplayIndex = 8
+                ctl.Columns("Released").DisplayIndex = 7
 
             Case "DataGridView4"
                 If IsNothing(Me.ComboBox4.SelectedValue) Then Exit Sub
 
                 SQLCode = "SELECT Patient_Attendees_ID & ' - ' & Format(Date_Of_Birth,'dd-MMM-yyyy') AS Volunteer, Start AS Collection_Date, " & _
-                    "Result, Lab_QC_Person, Lab_QC_Date, Released_By, Released_Date " & _
+                    "Result, Lab_QC_Person & ' - ' & Format(Lab_QC_Date,'dd-MMM-yyyy') AS QC, " & _
+                    "Released_By & ' - ' & Format(Released_Date,'dd-MMM-yyyy') AS Released " & _
                     "FROM (tblAppointments a INNER JOIN " & _
                     "tblApp_Results b ON a.ID=b.APP_ID) INNER JOIN tblPatientDemographics c " & _
                     " ON a.Patient_Attendees_ID=c.ID " & _
@@ -150,14 +147,8 @@
                 OverClass.CreateDataSet(SQLCode, BindingSource1, DataGridView4)
 
                 ctl.ReadOnly = True
-                ctl.Columns("Lab_QC_Person").HeaderText = "QC'd By"
-                ctl.Columns("Lab_QC_Date").HeaderText = "QC Date"
-                ctl.Columns("Released_By").HeaderText = "Released By"
-                ctl.Columns("Released_Date").HeaderText = "Released Date"
                 ctl.Columns("Collection_Date").HeaderText = "Collection Date"
                 ctl.Columns("Result").Visible = False
-                ctl.Columns("Lab_QC_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
-                ctl.Columns("Released_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
                 ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
 
                 Dim dt As DataTable
@@ -183,7 +174,7 @@
                 If IsNothing(SiteForm.ComboBox100.SelectedValue) Then Exit Sub
 
                 SQLCode = "SELECT Patient_Attendees_ID & ' - ' & Format(Date_Of_Birth,'dd-MMM-yyyy') AS Volunteer, Start AS Collection_Date, " & _
-                    "Result_ID, Result, Released_By, Released_Date, Site_QC " & _
+                    "Result_ID, Result, Released_By & ' - ' & Format(Released_Date,'dd-MMM-yyyy') As Released, Site_QC " & _
                     "FROM (tblAppointments a INNER JOIN " & _
                     "tblApp_Results b ON a.ID=b.APP_ID) INNER JOIN tblPatientDemographics c " & _
                     " ON a.Patient_Attendees_ID=c.ID " & _
@@ -195,18 +186,14 @@
 
 
                 ctl.Columns("Site_QC").HeaderText = "QC Check"
-                ctl.Columns("Released_By").HeaderText = "Released By"
-                ctl.Columns("Released_Date").HeaderText = "Released Date"
                 ctl.Columns("Collection_Date").HeaderText = "Collection Date"
                 ctl.Columns("Result").Visible = False
                 ctl.Columns("Result_ID").Visible = False
-                ctl.Columns("Released_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
                 ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
                 ctl.Columns("Volunteer").ReadOnly = True
                 ctl.Columns("Collection_Date").ReadOnly = True
                 ctl.Columns("Result").ReadOnly = True
-                ctl.Columns("Released_By").ReadOnly = True
-                ctl.Columns("Released_Date").ReadOnly = True
+                ctl.Columns("Released").ReadOnly = True
 
                 Dim dt As DataTable
                 Dim cmb As New DataGridViewComboBoxColumn
@@ -254,6 +241,46 @@
                 ctl.ReadOnly = True
                 ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
 
+            Case "DataGridView103"
+
+                SQLCode = "SELECT * FROM LabExport"
+
+                OverClass.CreateDataSet(SQLCode, SiteForm.BindingSource1, SiteForm.DataGridView103)
+                ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
+                ctl.ReadOnly = True
+
+            Case "DataGridView104"
+
+                If IsNothing(SiteForm.ComboBox101.SelectedValue) Then Exit Sub
+
+                SQLCode = "SELECT Patient_Attendees_ID & ' - ' & Format(Date_Of_Birth,'dd-MMM-yyyy') AS Volunteer, " & _
+                    "Start AS Collection_Date, Result, Site_QC_Person & ' - ' & Format(Site_QC_Date,'dd-MMM-yyyy') AS QC " & _
+                    "FROM ((tblApp_Results a INNER JOIN tblAppointments b ON a.App_ID=b.ID) " & _
+                    "INNER JOIN tblUniqueStudyCodes c ON a.Virus_ID=c.Virus_ID) " & _
+                    " INNER JOIN tblPatientDemographics d ON b.Patient_Attendees_ID=d.ID " & _
+                    "WHERE Site_QC=True AND Result<=Criteria " & _
+                    "AND UniqueStudyCodeID=" & SiteForm.ComboBox101.SelectedValue
+
+                OverClass.CreateDataSet(SQLCode, SiteForm.BindingSource1, SiteForm.DataGridView104)
+                Dim dt As DataTable
+                Dim cmb As New DataGridViewComboBoxColumn
+                dt = OverClass.TempDataTable("SELECT Display, ActValue FROM tblResults ORDER BY ACTValue ASC, Display ASC")
+                cmb.ValueMember = "ActValue"
+                cmb.DisplayMember = "Display"
+                cmb.DataPropertyName = OverClass.CurrentDataSet.Tables(0).Columns("Result").ToString
+                cmb.HeaderText = "Result"
+                cmb.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing
+                Dim i As Long = 1
+                Do While i <> 13000
+                    dt.Rows.Add(i, i)
+                    i += 1
+                Loop
+                cmb.DataSource = dt
+                cmb.ReadOnly = True
+
+                ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
+                ctl.Columns("Collection_Date").HeaderText = "Collection Date"
+                ctl.ReadOnly = True
 
         End Select
 

@@ -29,6 +29,12 @@ Module ButtonModule
             Case "Button101"
                 Call Saver(SiteForm.DataGridView101)
 
+            Case "Button102"
+                Call ExportExcel("SELECT * FROM LabExport")
+
+            Case "Button103"
+                Call ExportExcel(OverClass.CurrentDataAdapter.SelectCommand.CommandText)
+
         End Select
 
 

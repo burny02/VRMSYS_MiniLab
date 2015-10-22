@@ -23,6 +23,10 @@ VRMSYS_MiniLab
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:VRMSYS___MiniLab.My.Resources.Resources.Remove">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:VRMSYS___MiniLab.My.Resources.Resources.SAVER">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

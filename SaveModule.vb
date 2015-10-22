@@ -92,6 +92,34 @@
                     .Add("@P1", OleDb.OleDbType.Boolean, 255, "DefaultTest")
                     .Add("@P2", OleDb.OleDbType.Double, 255, "Virus_ID")
                 End With
+
+            Case "DataGridView200"
+
+                OverClass.CurrentDataAdapter.UpdateCommand = New OleDb.OleDbCommand("UPDATE tblApp_Results " & _
+                                                                    "Set Virus_ID=@P1 WHERE Result_ID=@P2")
+
+
+                With OverClass.CurrentDataAdapter.UpdateCommand.Parameters
+                    .Add("@P1", OleDb.OleDbType.Double, 255, "Virus_ID")
+                    .Add("@P2", OleDb.OleDbType.Double, 255, "Result_ID")
+                End With
+
+                OverClass.CurrentDataAdapter.InsertCommand = New OleDb.OleDbCommand("INSERT INTO tblApp_Results " & _
+                                                                    "(App_ID, Virus_ID) VALUES (" & AppID & ", @P1)")
+
+
+                With OverClass.CurrentDataAdapter.InsertCommand.Parameters
+                    .Add("@P1", OleDb.OleDbType.Double, 255, "Virus_ID")
+                End With
+
+                OverClass.CurrentDataAdapter.DeleteCommand = New OleDb.OleDbCommand("DELETE FROM tblApp_Results " & _
+                                                                    "WHERE Result_ID=@P1")
+
+
+                With OverClass.CurrentDataAdapter.DeleteCommand.Parameters
+                    .Add("@P1", OleDb.OleDbType.Double, 255, "Result_ID")
+                End With
+
         End Select
 
 

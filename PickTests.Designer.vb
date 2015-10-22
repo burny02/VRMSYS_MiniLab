@@ -23,7 +23,7 @@ Partial Class PickTests
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PickTests))
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.DataGridView200 = New System.Windows.Forms.DataGridView()
@@ -59,8 +59,8 @@ Partial Class PickTests
         '
         Me.DataGridView200.AllowUserToAddRows = False
         Me.DataGridView200.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro
-        Me.DataGridView200.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
+        Me.DataGridView200.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView200.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView200.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView200.Dock = System.Windows.Forms.DockStyle.Fill
@@ -68,6 +68,7 @@ Partial Class PickTests
         Me.DataGridView200.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView200.Name = "DataGridView200"
         Me.DataGridView200.RowHeadersVisible = False
+        Me.DataGridView200.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DataGridView200.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DataGridView200.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView200.Size = New System.Drawing.Size(551, 358)

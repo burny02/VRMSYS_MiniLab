@@ -34,6 +34,10 @@
                 ctl.ValueMember = "Virus_ID"
                 ctl.DisplayMember = "Description"
 
+            Case "ComboBox101"
+                ctl.DataSource = OverClass.TempDataTable("SELECT UniqueStudyCodeID, StudyCode FROM tblUniqueStudyCodes")
+                ctl.ValueMember = "UniqueStudyCodeID"
+                ctl.DisplayMember = "StudyCode"
 
         End Select
 
@@ -61,6 +65,9 @@
 
             Case "ComboBox100"
                 Grid = SiteForm.DataGridView100
+
+            Case "ComboBox101"
+                Grid = SiteForm.DataGridView104
 
         End Select
 
