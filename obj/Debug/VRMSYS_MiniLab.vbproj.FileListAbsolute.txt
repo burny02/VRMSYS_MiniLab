@@ -14,3 +14,4 @@ C:\OK\Databases\Backup\VRMSYS_MiniLab\VRMSYS_MiniLab\obj\Debug\VRMSYS_MiniLab.pd
 C:\OK\Databases\Backup\VRMSYS_MiniLab\VRMSYS_MiniLab\obj\Debug\VRMSYS_MiniLab.vbprojResolveAssemblyReference.cache
 C:\OK\Databases\Backup\VRMSYS_MiniLab\VRMSYS_MiniLab\obj\Debug\VRMSYS___MiniLab.Site.resources
 C:\OK\Databases\Backup\VRMSYS_MiniLab\VRMSYS_MiniLab\obj\Debug\VRMSYS___MiniLab.PickTests.resources
+C:\OK\Databases\Backup\VRMSYS_MiniLab\VRMSYS_MiniLab\obj\Debug\VRMSYS___MiniLab.MainForm.resources

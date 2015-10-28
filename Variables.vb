@@ -12,8 +12,10 @@ Module Variables
     Private Contact As String = "Mustafa Dawood"
     Public Const SolutionName As String = "VRMSYS - Mini Lab"
     Public SiteForm As Site
+    Public LabForm As Form1
     Public PickCohort As Long
     Public AppID As Long
+    Public Role As String
 
     Public Function GetTheConnection() As String
         GetTheConnection = Connect2
@@ -35,6 +37,10 @@ Module Variables
         OverClass.LoginCheck()
 
         OverClass.AddAllDataItem(WhichForm)
+
+
+        If WhichForm Is MainForm Then Role = OverClass.TempDataTable("SELECT Role FROM " & UserTable & _
+            " WHERE " & UserField & "='" & OverClass.GetUserName & "'").Rows(0).Item(0).ToString()
 
         For Each ctl In OverClass.DataItemCollection
             If (TypeOf ctl Is ComboBox) Then

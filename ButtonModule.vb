@@ -19,10 +19,6 @@ Module ButtonModule
             Case "Button4"
                 Call ExportExcel("SELECT * FROM LabExport")
 
-            Case "Button5"
-                SiteForm = New Site
-                SiteForm.Visible = True
-
             Case "Button100"
                 Call Saver(SiteForm.DataGridView100)
 
