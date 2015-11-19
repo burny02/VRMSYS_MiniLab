@@ -3,7 +3,7 @@
 Module Variables
     Public OverClass As OverClass
     Private Const TablePath As String = "C:\OK\Databases\Backup\Backend2.accdb"
-    Private Const PWord As String = "Crypto*Dave02"
+    Private Const PWord As String = "Shared*1"
     Private Const Connect2 As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & TablePath & ";Jet OLEDB:Database Password=" & PWord
     Private Const UserTable As String = "[Users]"
     Private Const UserField As String = "Username"
@@ -16,6 +16,8 @@ Module Variables
     Public PickCohort As Long
     Public AppID As Long
     Public Role As String
+    Public WhichUser As String
+    Public ReportPath As String = "M:\VOLUNTEER SCREENING SERVICES\Systems\MiniLab\Reports\"
 
     Public Function GetTheConnection() As String
         GetTheConnection = Connect2
@@ -38,8 +40,9 @@ Module Variables
 
         OverClass.AddAllDataItem(WhichForm)
 
+        WhichUser = OverClass.GetUserName
 
-        If WhichForm Is MainForm Then Role = OverClass.TempDataTable("SELECT Role FROM " & UserTable & _
+        Role = OverClass.TempDataTable("SELECT Role FROM " & UserTable &
             " WHERE " & UserField & "='" & OverClass.GetUserName & "'").Rows(0).Item(0).ToString()
 
         For Each ctl In OverClass.DataItemCollection

@@ -27,8 +27,6 @@
             Case "All Results"
                 Form1.Specifics(Me.DataGridView103)
 
-            Case "Eligible Volunteers"
-                StartCombo(Me.ComboBox101)
 
         End Select
 
@@ -83,7 +81,7 @@
             OK.DataGridView200.RowTemplate.Height = 35
             cmb2.Width = 50
             OK.ShowDialog()
-            Me.TabControl1.SelectedIndex = 4
+            Me.TabControl1.SelectedIndex = 3
             Me.TabControl1_Selecting(Me.TabControl1, New TabControlCancelEventArgs(TabPage4, 0, False, TabControlAction.Selecting))
 
 

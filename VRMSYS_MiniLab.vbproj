@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4C3AD1C1-CE9F-4F2A-8669-29FF20F4887B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>VRMSYS___MiniLab.My.MyApplication</StartupObject>
-    <RootNamespace>VRMSYS___MiniLab</RootNamespace>
+    <StartupObject>VRMSYS_MiniLab.My.MyApplication</StartupObject>
+    <RootNamespace>VRMSYS_MiniLab</RootNamespace>
     <AssemblyName>VRMSYS_MiniLab</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
@@ -49,10 +49,13 @@
     <ApplicationIcon>hvivo_logo1_8dY_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -78,6 +81,11 @@
   <ItemGroup>
     <Compile Include="ButtonModule.vb" />
     <Compile Include="ComboModule.vb" />
+    <Compile Include="Dave0.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dave0.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ExportModule.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -113,6 +121,12 @@
     <Compile Include="PickTests.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportDisplay.Designer.vb">
+      <DependentUpon>ReportDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDisplay.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SaveModule.vb" />
     <Compile Include="Site.Designer.vb">
       <DependentUpon>Site.vb</DependentUpon>
@@ -138,11 +152,26 @@
     <EmbeddedResource Include="PickTests.resx">
       <DependentUpon>PickTests.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportDisplay.resx">
+      <DependentUpon>ReportDisplay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultExport.rdlc" />
     <EmbeddedResource Include="Site.resx">
       <DependentUpon>Site.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dave0.xsc">
+      <DependentUpon>Dave0.xsd</DependentUpon>
+    </None>
+    <None Include="Dave0.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dave0.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dave0.xss">
+      <DependentUpon>Dave0.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -165,6 +194,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hvivo_logo1_8dY_icon.ico" />
+    <None Include="Resources\button.png" />
+    <None Include="Resources\Image1.png" />
     <None Include="Resources\Remove.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

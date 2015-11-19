@@ -17,6 +17,10 @@
                 LabForm = New Form1
                 Form1.ShowDialog()
 
+            Case "Study_Lead"
+                LabForm = New Form1
+                Form1.ShowDialog()
+
         End Select
 
 

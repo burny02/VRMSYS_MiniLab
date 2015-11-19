@@ -48,13 +48,13 @@
             Case "DataGridView2"
                 If IsNothing(Me.ComboBox2.SelectedValue) Then Exit Sub
 
-                SQLCode = "SELECT Result_ID, Patient_Attendees_ID & ' - ' & Format(Date_Of_Birth,'dd-MMM-yyyy') AS Volunteer, " & _
-                    "Start, Result, Batch_No, Lab_QC " & _
-                    "FROM (tblAppointments a INNER JOIN " & _
-                    "tblApp_Results b ON a.ID=b.APP_ID) INNER JOIN tblPatientDemographics c " & _
-                    " ON a.Patient_Attendees_ID=c.ID " & _
-                    "WHERE Virus_ID=" & Me.ComboBox2.SelectedValue & _
-                    " AND Lab_QC=False " & _
+                SQLCode = "SELECT Result_ID, Patient_Attendees_ID & ' - ' & Format(Date_Of_Birth,'dd-MMM-yyyy') AS Volunteer, " &
+                    "Start, Result, Batch_No, Entered_Person & ' - ' & Format(Entered_Date,'dd-MMM-yyyy') As Entered, Lab_QC " &
+                    "FROM (tblAppointments a INNER JOIN " &
+                    "tblApp_Results b ON a.ID=b.APP_ID) INNER JOIN tblPatientDemographics c " &
+                    " ON a.Patient_Attendees_ID=c.ID " &
+                    "WHERE Virus_ID=" & Me.ComboBox2.SelectedValue &
+                    " AND Lab_QC=False " &
                     "ORDER BY START ASC, Patient_Attendees_ID ASC"
 
                 OverClass.CreateDataSet(SQLCode, BindingSource1, DataGridView2)
@@ -68,6 +68,7 @@
                 ctl.Columns("Start").ReadOnly = True
                 ctl.Columns("Batch_No").ReadOnly = True
                 ctl.Columns("Result").ReadOnly = True
+                ctl.Columns("Entered").ReadOnly = True
 
                 Dim dt As DataTable
                 Dim cmb As New DataGridViewComboBoxColumn
@@ -249,39 +250,6 @@
                 ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
                 ctl.ReadOnly = True
 
-            Case "DataGridView104"
-
-                If IsNothing(SiteForm.ComboBox101.SelectedValue) Then Exit Sub
-
-                SQLCode = "SELECT Patient_Attendees_ID & ' - ' & Format(Date_Of_Birth,'dd-MMM-yyyy') AS Volunteer, " & _
-                    "Start AS Collection_Date, Result, Site_QC_Person & ' - ' & Format(Site_QC_Date,'dd-MMM-yyyy') AS QC " & _
-                    "FROM ((tblApp_Results a INNER JOIN tblAppointments b ON a.App_ID=b.ID) " & _
-                    "INNER JOIN tblUniqueStudyCodes c ON a.Virus_ID=c.Virus_ID) " & _
-                    " INNER JOIN tblPatientDemographics d ON b.Patient_Attendees_ID=d.ID " & _
-                    "WHERE Site_QC=True AND Result<=Criteria " & _
-                    "AND UniqueStudyCodeID=" & SiteForm.ComboBox101.SelectedValue
-
-                OverClass.CreateDataSet(SQLCode, SiteForm.BindingSource1, SiteForm.DataGridView104)
-                Dim dt As DataTable
-                Dim cmb As New DataGridViewComboBoxColumn
-                dt = OverClass.TempDataTable("SELECT Display, ActValue FROM tblResults ORDER BY ACTValue ASC, Display ASC")
-                cmb.ValueMember = "ActValue"
-                cmb.DisplayMember = "Display"
-                cmb.DataPropertyName = OverClass.CurrentDataSet.Tables(0).Columns("Result").ToString
-                cmb.HeaderText = "Result"
-                cmb.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing
-                Dim i As Long = 1
-                Do While i <> 13000
-                    dt.Rows.Add(i, i)
-                    i += 1
-                Loop
-                cmb.DataSource = dt
-                cmb.ReadOnly = True
-
-                ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
-                ctl.Columns("Collection_Date").HeaderText = "Collection Date"
-                ctl.ReadOnly = True
-
         End Select
 
     End Sub
@@ -338,6 +306,35 @@
         If Not IsNothing(ctl) Then Call Specifics(ctl)
 
 
+    End Sub
+
+    Private Sub DataGridView2_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles DataGridView2.CellValidating
+
+        If e.ColumnIndex <> sender.columns("Lab_QC").index Then Exit Sub
+
+        Dim LineUser = DataGridView2.Item("Entered", e.RowIndex).Value
+        LineUser = Trim(Strings.Left(LineUser, InStr(LineUser, "-") - 1))
+
+        If WhichUser = LineUser Then
+            If e.FormattedValue = True Then
+                e.Cancel = True
+                MsgBox("Must be QC'd by a different member of staff")
+            End If
+        End If
+
+    End Sub
+
+    Private Sub DataGridView3_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles DataGridView3.CellValidating
+
+        If e.ColumnIndex <> sender.columns("Released").index Then Exit Sub
+
+        If Role <> "Study_Lead" Then
+            If e.FormattedValue = True Then
+                e.Cancel = True
+                MsgBox("Must be released by study lead")
+            End If
+
+        End If
     End Sub
 End Class
 

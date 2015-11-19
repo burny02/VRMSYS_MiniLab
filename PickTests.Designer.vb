@@ -76,7 +76,7 @@ Partial Class PickTests
         '
         'Button200
         '
-        Me.Button200.BackgroundImage = Global.VRMSYS___MiniLab.My.Resources.Resources.SAVER
+        Me.Button200.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.SAVER
         Me.Button200.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button200.Dock = System.Windows.Forms.DockStyle.Left
         Me.Button200.FlatAppearance.BorderSize = 0

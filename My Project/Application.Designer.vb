@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.VRMSYS___MiniLab.MainForm
+            Me.MainForm = Global.VRMSYS_MiniLab.MainForm
         End Sub
     End Class
 End Namespace
