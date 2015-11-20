@@ -25,31 +25,27 @@ Partial Class Site
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Site))
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.Button100 = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.ComboBox100 = New System.Windows.Forms.ComboBox()
         Me.DataGridView100 = New System.Windows.Forms.DataGridView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
-        Me.Button101 = New System.Windows.Forms.Button()
         Me.DataGridView101 = New System.Windows.Forms.DataGridView()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.DataGridView102 = New System.Windows.Forms.DataGridView()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
-        Me.Button102 = New System.Windows.Forms.Button()
         Me.DataGridView103 = New System.Windows.Forms.DataGridView()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
@@ -60,8 +56,24 @@ Partial Class Site
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.SplitContainer4 = New System.Windows.Forms.SplitContainer()
+        Me.DataGridView102 = New System.Windows.Forms.DataGridView()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DateTimePicker101 = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.DateTimePicker102 = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.DateTimePicker103 = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.DateTimePicker104 = New System.Windows.Forms.DateTimePicker()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Button101 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button100 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button102 = New System.Windows.Forms.Button()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabPage2.SuspendLayout()
@@ -72,7 +84,6 @@ Partial Class Site
         CType(Me.DataGridView100, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
@@ -80,7 +91,6 @@ Partial Class Site
         Me.SplitContainer2.SuspendLayout()
         CType(Me.DataGridView101, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
-        CType(Me.DataGridView102, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer3.Panel1.SuspendLayout()
@@ -90,6 +100,12 @@ Partial Class Site
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainer4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer4.Panel1.SuspendLayout()
+        Me.SplitContainer4.Panel2.SuspendLayout()
+        Me.SplitContainer4.SuspendLayout()
+        CType(Me.DataGridView102, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -102,7 +118,7 @@ Partial Class Site
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(883, 510)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Site QC"
+        Me.TabPage2.Text = "QC"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'SplitContainer1
@@ -126,21 +142,6 @@ Partial Class Site
         Me.SplitContainer1.SplitterDistance = 39
         Me.SplitContainer1.SplitterWidth = 5
         Me.SplitContainer1.TabIndex = 0
-        '
-        'Button100
-        '
-        Me.Button100.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.SAVER
-        Me.Button100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button100.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Button100.FlatAppearance.BorderSize = 0
-        Me.Button100.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button100.Location = New System.Drawing.Point(0, 0)
-        Me.Button100.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button100.Name = "Button100"
-        Me.Button100.Size = New System.Drawing.Size(173, 39)
-        Me.Button100.TabIndex = 54
-        Me.Button100.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button100.UseVisualStyleBackColor = True
         '
         'Label16
         '
@@ -190,9 +191,9 @@ Partial Class Site
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
@@ -227,19 +228,6 @@ Partial Class Site
         Me.Label2.Size = New System.Drawing.Size(0, 20)
         Me.Label2.TabIndex = 13
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox4.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.hVIVO_screensaver_two
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(159, 7)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(581, 464)
-        Me.PictureBox4.TabIndex = 14
-        Me.PictureBox4.TabStop = False
-        '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.SplitContainer2)
@@ -249,7 +237,7 @@ Partial Class Site
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Size = New System.Drawing.Size(883, 510)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "DefaultTests"
+        Me.TabPage3.Text = "ARF Defaults"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'SplitContainer2
@@ -271,21 +259,6 @@ Partial Class Site
         Me.SplitContainer2.SplitterDistance = 39
         Me.SplitContainer2.SplitterWidth = 5
         Me.SplitContainer2.TabIndex = 1
-        '
-        'Button101
-        '
-        Me.Button101.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.SAVER
-        Me.Button101.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button101.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Button101.FlatAppearance.BorderSize = 0
-        Me.Button101.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button101.Location = New System.Drawing.Point(0, 0)
-        Me.Button101.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button101.Name = "Button101"
-        Me.Button101.Size = New System.Drawing.Size(173, 39)
-        Me.Button101.TabIndex = 54
-        Me.Button101.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button101.UseVisualStyleBackColor = True
         '
         'DataGridView101
         '
@@ -309,35 +282,15 @@ Partial Class Site
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.DataGridView102)
+        Me.TabPage4.Controls.Add(Me.SplitContainer4)
         Me.TabPage4.Location = New System.Drawing.Point(4, 25)
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Size = New System.Drawing.Size(883, 510)
         Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "VolunteerTests"
+        Me.TabPage4.Text = "ARF"
         Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'DataGridView102
-        '
-        Me.DataGridView102.AllowUserToAddRows = False
-        Me.DataGridView102.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro
-        Me.DataGridView102.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView102.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView102.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView102.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView102.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.DataGridView102.Location = New System.Drawing.Point(4, 4)
-        Me.DataGridView102.Margin = New System.Windows.Forms.Padding(4)
-        Me.DataGridView102.MultiSelect = False
-        Me.DataGridView102.Name = "DataGridView102"
-        Me.DataGridView102.RowHeadersVisible = False
-        Me.DataGridView102.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.DataGridView102.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.DataGridView102.Size = New System.Drawing.Size(875, 502)
-        Me.DataGridView102.TabIndex = 4
         '
         'TabPage5
         '
@@ -348,7 +301,7 @@ Partial Class Site
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage5.Size = New System.Drawing.Size(883, 510)
         Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "All Results"
+        Me.TabPage5.Text = "All QC'd Results"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'SplitContainer3
@@ -361,6 +314,11 @@ Partial Class Site
         '
         'SplitContainer3.Panel1
         '
+        Me.SplitContainer3.Panel1.Controls.Add(Me.Button5)
+        Me.SplitContainer3.Panel1.Controls.Add(Me.Label7)
+        Me.SplitContainer3.Panel1.Controls.Add(Me.DateTimePicker103)
+        Me.SplitContainer3.Panel1.Controls.Add(Me.Label8)
+        Me.SplitContainer3.Panel1.Controls.Add(Me.DateTimePicker104)
         Me.SplitContainer3.Panel1.Controls.Add(Me.Button102)
         '
         'SplitContainer3.Panel2
@@ -370,22 +328,6 @@ Partial Class Site
         Me.SplitContainer3.SplitterDistance = 30
         Me.SplitContainer3.SplitterWidth = 5
         Me.SplitContainer3.TabIndex = 2
-        '
-        'Button102
-        '
-        Me.Button102.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.button
-        Me.Button102.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button102.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Button102.FlatAppearance.BorderSize = 0
-        Me.Button102.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button102.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button102.Location = New System.Drawing.Point(0, 0)
-        Me.Button102.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button102.Name = "Button102"
-        Me.Button102.Size = New System.Drawing.Size(141, 30)
-        Me.Button102.TabIndex = 56
-        Me.Button102.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button102.UseVisualStyleBackColor = True
         '
         'DataGridView103
         '
@@ -402,6 +344,9 @@ Partial Class Site
         Me.DataGridView103.MultiSelect = False
         Me.DataGridView103.Name = "DataGridView103"
         Me.DataGridView103.RowHeadersVisible = False
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView103.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridView103.RowTemplate.Height = 40
         Me.DataGridView103.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DataGridView103.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView103.Size = New System.Drawing.Size(875, 467)
@@ -411,8 +356,8 @@ Partial Class Site
         '
         Me.DataGridView4.AllowUserToAddRows = False
         Me.DataGridView4.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro
-        Me.DataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro
+        Me.DataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView4.Dock = System.Windows.Forms.DockStyle.Fill
@@ -451,8 +396,8 @@ Partial Class Site
         '
         Me.DataGridView3.AllowUserToAddRows = False
         Me.DataGridView3.AllowUserToDeleteRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro
-        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Gainsboro
+        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
@@ -491,8 +436,8 @@ Partial Class Site
         '
         Me.DataGridView2.AllowUserToAddRows = False
         Me.DataGridView2.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Gainsboro
-        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro
+        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -540,6 +485,245 @@ Partial Class Site
         Me.Button4.TabIndex = 55
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.UseVisualStyleBackColor = True
+        '
+        'SplitContainer4
+        '
+        Me.SplitContainer4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
+        Me.SplitContainer4.IsSplitterFixed = True
+        Me.SplitContainer4.Location = New System.Drawing.Point(4, 4)
+        Me.SplitContainer4.Name = "SplitContainer4"
+        Me.SplitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'Panel1
+        '
+        Me.SplitContainer4.Panel1.Controls.Add(Me.Label5)
+        Me.SplitContainer4.Panel1.Controls.Add(Me.DateTimePicker101)
+        Me.SplitContainer4.Panel1.Controls.Add(Me.Button1)
+        Me.SplitContainer4.Panel1.Controls.Add(Me.Label6)
+        Me.SplitContainer4.Panel1.Controls.Add(Me.DateTimePicker102)
+        '
+        'SplitContainer4.Panel2
+        '
+        Me.SplitContainer4.Panel2.Controls.Add(Me.DataGridView102)
+        Me.SplitContainer4.Size = New System.Drawing.Size(875, 502)
+        Me.SplitContainer4.SplitterDistance = 30
+        Me.SplitContainer4.TabIndex = 0
+        '
+        'DataGridView102
+        '
+        Me.DataGridView102.AllowUserToAddRows = False
+        Me.DataGridView102.AllowUserToDeleteRows = False
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro
+        Me.DataGridView102.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView102.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView102.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView102.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView102.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.DataGridView102.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView102.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridView102.MultiSelect = False
+        Me.DataGridView102.Name = "DataGridView102"
+        Me.DataGridView102.RowHeadersVisible = False
+        Me.DataGridView102.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.DataGridView102.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.DataGridView102.Size = New System.Drawing.Size(875, 468)
+        Me.DataGridView102.TabIndex = 5
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(288, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(206, 25)
+        Me.Label5.TabIndex = 56
+        Me.Label5.Text = "Collection Date - From"
+        '
+        'DateTimePicker101
+        '
+        Me.DateTimePicker101.CustomFormat = "dd-MMM-yyyy"
+        Me.DateTimePicker101.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DateTimePicker101.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker101.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker101.Location = New System.Drawing.Point(494, 0)
+        Me.DateTimePicker101.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker101.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePicker101.Name = "DateTimePicker101"
+        Me.DateTimePicker101.Size = New System.Drawing.Size(172, 27)
+        Me.DateTimePicker101.TabIndex = 57
+        Me.DateTimePicker101.Value = New Date(2015, 1, 1, 0, 0, 0, 0)
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(666, 0)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(36, 25)
+        Me.Label6.TabIndex = 58
+        Me.Label6.Text = "To"
+        '
+        'DateTimePicker102
+        '
+        Me.DateTimePicker102.CustomFormat = "dd-MMM-yyyy"
+        Me.DateTimePicker102.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DateTimePicker102.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker102.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker102.Location = New System.Drawing.Point(702, 0)
+        Me.DateTimePicker102.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker102.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePicker102.Name = "DateTimePicker102"
+        Me.DateTimePicker102.Size = New System.Drawing.Size(173, 27)
+        Me.DateTimePicker102.TabIndex = 59
+        Me.DateTimePicker102.Value = New Date(2015, 11, 20, 0, 0, 0, 0)
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(288, 0)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(206, 25)
+        Me.Label7.TabIndex = 60
+        Me.Label7.Text = "Collection Date - From"
+        '
+        'DateTimePicker103
+        '
+        Me.DateTimePicker103.CustomFormat = "dd-MMM-yyyy"
+        Me.DateTimePicker103.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DateTimePicker103.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker103.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker103.Location = New System.Drawing.Point(494, 0)
+        Me.DateTimePicker103.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker103.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePicker103.Name = "DateTimePicker103"
+        Me.DateTimePicker103.Size = New System.Drawing.Size(172, 27)
+        Me.DateTimePicker103.TabIndex = 61
+        Me.DateTimePicker103.Value = New Date(2015, 1, 1, 0, 0, 0, 0)
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(666, 0)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(36, 25)
+        Me.Label8.TabIndex = 62
+        Me.Label8.Text = "To"
+        '
+        'DateTimePicker104
+        '
+        Me.DateTimePicker104.CustomFormat = "dd-MMM-yyyy"
+        Me.DateTimePicker104.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DateTimePicker104.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker104.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker104.Location = New System.Drawing.Point(702, 0)
+        Me.DateTimePicker104.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker104.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePicker104.Name = "DateTimePicker104"
+        Me.DateTimePicker104.Size = New System.Drawing.Size(173, 27)
+        Me.DateTimePicker104.TabIndex = 63
+        Me.DateTimePicker104.Value = New Date(2015, 11, 20, 0, 0, 0, 0)
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox4.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.hVIVO_screensaver_two
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox4.Location = New System.Drawing.Point(159, 7)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(581, 464)
+        Me.PictureBox4.TabIndex = 14
+        Me.PictureBox4.TabStop = False
+        '
+        'Button101
+        '
+        Me.Button101.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.SAVER
+        Me.Button101.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button101.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button101.FlatAppearance.BorderSize = 0
+        Me.Button101.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button101.Location = New System.Drawing.Point(0, 0)
+        Me.Button101.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button101.Name = "Button101"
+        Me.Button101.Size = New System.Drawing.Size(173, 39)
+        Me.Button101.TabIndex = 54
+        Me.Button101.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button101.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.button
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(0, 0)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(141, 30)
+        Me.Button1.TabIndex = 55
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button100
+        '
+        Me.Button100.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.SAVER
+        Me.Button100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button100.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button100.FlatAppearance.BorderSize = 0
+        Me.Button100.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button100.Location = New System.Drawing.Point(0, 0)
+        Me.Button100.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button100.Name = "Button100"
+        Me.Button100.Size = New System.Drawing.Size(173, 39)
+        Me.Button100.TabIndex = 54
+        Me.Button100.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button100.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.button__1_
+        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(141, 0)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(167, 30)
+        Me.Button5.TabIndex = 64
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button102
+        '
+        Me.Button102.BackgroundImage = Global.VRMSYS_MiniLab.My.Resources.Resources.button
+        Me.Button102.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button102.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button102.FlatAppearance.BorderSize = 0
+        Me.Button102.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button102.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button102.Location = New System.Drawing.Point(0, 0)
+        Me.Button102.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button102.Name = "Button102"
+        Me.Button102.Size = New System.Drawing.Size(141, 30)
+        Me.Button102.TabIndex = 56
+        Me.Button102.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button102.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -589,7 +773,6 @@ Partial Class Site
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
@@ -597,9 +780,9 @@ Partial Class Site
         Me.SplitContainer2.ResumeLayout(False)
         CType(Me.DataGridView101, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
-        CType(Me.DataGridView102, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         Me.SplitContainer3.Panel1.ResumeLayout(False)
+        Me.SplitContainer3.Panel1.PerformLayout()
         Me.SplitContainer3.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer3.ResumeLayout(False)
@@ -607,6 +790,13 @@ Partial Class Site
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer4.Panel1.ResumeLayout(False)
+        Me.SplitContainer4.Panel1.PerformLayout()
+        Me.SplitContainer4.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer4.ResumeLayout(False)
+        CType(Me.DataGridView102, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -639,9 +829,20 @@ Partial Class Site
     Friend WithEvents Button101 As System.Windows.Forms.Button
     Friend WithEvents DataGridView101 As System.Windows.Forms.DataGridView
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
-    Friend WithEvents DataGridView102 As System.Windows.Forms.DataGridView
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
     Friend WithEvents SplitContainer3 As System.Windows.Forms.SplitContainer
     Friend WithEvents DataGridView103 As System.Windows.Forms.DataGridView
     Friend WithEvents Button102 As System.Windows.Forms.Button
+    Friend WithEvents SplitContainer4 As SplitContainer
+    Friend WithEvents DataGridView102 As DataGridView
+    Friend WithEvents Label5 As Label
+    Friend WithEvents DateTimePicker101 As DateTimePicker
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents DateTimePicker102 As DateTimePicker
+    Friend WithEvents Label7 As Label
+    Friend WithEvents DateTimePicker103 As DateTimePicker
+    Friend WithEvents Label8 As Label
+    Friend WithEvents DateTimePicker104 As DateTimePicker
+    Friend WithEvents Button5 As Button
 End Class

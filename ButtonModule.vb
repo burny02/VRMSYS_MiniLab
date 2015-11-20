@@ -48,6 +48,37 @@ Module ButtonModule
 
                 End Try
 
+            Case "Button5"
+                Dim OK As New ReportDisplay
+
+                OK.ReportViewer1.ProcessingMode = ProcessingMode.Local
+                OK.ReportViewer1.LocalReport.ReportEmbeddedResource = "VRMSYS_MiniLab.ExportByVol.rdlc"
+                OK.ReportViewer1.LocalReport.DataSources.Add(New ReportDataSource("ReportDataSet",
+                                                        OverClass.TempDataTable(
+                                                        OverClass.CurrentDataAdapter.SelectCommand.CommandText)))
+
+                OK.ReportViewer1.RefreshReport()
+
+                Dim RandNo As String = Format(DateAndTime.Now, "ddssmmhhyymm")
+
+                Dim pdfContent As Byte() = OK.ReportViewer1.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+                Dim pdfPath As String = ReportPath & RandNo & ".pdf"
+                Dim pdfFile As New System.IO.FileStream(pdfPath, System.IO.FileMode.Create)
+                pdfFile.Write(pdfContent, 0, pdfContent.Length)
+                pdfFile.Close()
+
+
+                OK.Close()
+
+                Try
+
+                    Process.Start("explorer.exe", pdfPath)
+
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+
+                End Try
+
             Case "Button100"
                 Call Saver(SiteForm.DataGridView100)
 

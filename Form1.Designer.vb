@@ -27,6 +27,7 @@ Partial Class Form1
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -52,9 +53,11 @@ Partial Class Form1
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.SplitContainer4 = New System.Windows.Forms.SplitContainer()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1.SuspendLayout()
@@ -150,7 +153,7 @@ Partial Class Form1
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(1012, 543)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "InputLab"
+        Me.TabPage2.Text = "Input"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'SplitContainer1
@@ -244,7 +247,7 @@ Partial Class Form1
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Size = New System.Drawing.Size(1012, 543)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "QCLab"
+        Me.TabPage3.Text = "QC"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'SplitContainer2
@@ -338,7 +341,7 @@ Partial Class Form1
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Size = New System.Drawing.Size(1012, 543)
         Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "ReleaseLab"
+        Me.TabPage4.Text = "Release"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'SplitContainer3
@@ -432,7 +435,7 @@ Partial Class Form1
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage5.Size = New System.Drawing.Size(1012, 543)
         Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "All Results"
+        Me.TabPage5.Text = "All QC'd Results"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'SplitContainer4
@@ -445,9 +448,11 @@ Partial Class Form1
         '
         'SplitContainer4.Panel1
         '
-        Me.SplitContainer4.Panel1.Controls.Add(Me.Button4)
         Me.SplitContainer4.Panel1.Controls.Add(Me.Label4)
-        Me.SplitContainer4.Panel1.Controls.Add(Me.ComboBox4)
+        Me.SplitContainer4.Panel1.Controls.Add(Me.DateTimePicker1)
+        Me.SplitContainer4.Panel1.Controls.Add(Me.Button4)
+        Me.SplitContainer4.Panel1.Controls.Add(Me.Label5)
+        Me.SplitContainer4.Panel1.Controls.Add(Me.DateTimePicker2)
         '
         'SplitContainer4.Panel2
         '
@@ -456,6 +461,32 @@ Partial Class Form1
         Me.SplitContainer4.SplitterDistance = 30
         Me.SplitContainer4.SplitterWidth = 5
         Me.SplitContainer4.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(417, 0)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(206, 25)
+        Me.Label4.TabIndex = 56
+        Me.Label4.Text = "Collection Date - From"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CustomFormat = "dd-MMM-yyyy"
+        Me.DateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(623, 0)
+        Me.DateTimePicker1.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker1.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(172, 27)
+        Me.DateTimePicker1.TabIndex = 57
+        Me.DateTimePicker1.Value = New Date(2015, 1, 1, 0, 0, 0, 0)
         '
         'Button4
         '
@@ -473,30 +504,31 @@ Partial Class Form1
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Label4
+        'Label5
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(684, 0)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 25)
-        Me.Label4.TabIndex = 35
-        Me.Label4.Text = "Virus"
+        Me.Label5.AutoSize = True
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(795, 0)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(36, 25)
+        Me.Label5.TabIndex = 58
+        Me.Label5.Text = "To"
         '
-        'ComboBox4
+        'DateTimePicker2
         '
-        Me.ComboBox4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(741, 0)
-        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ComboBox4.Size = New System.Drawing.Size(263, 28)
-        Me.ComboBox4.TabIndex = 34
+        Me.DateTimePicker2.CustomFormat = "dd-MMM-yyyy"
+        Me.DateTimePicker2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker2.Location = New System.Drawing.Point(831, 0)
+        Me.DateTimePicker2.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker2.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(173, 27)
+        Me.DateTimePicker2.TabIndex = 59
+        Me.DateTimePicker2.Value = New Date(2015, 11, 20, 0, 0, 0, 0)
         '
         'DataGridView4
         '
@@ -513,6 +545,9 @@ Partial Class Form1
         Me.DataGridView4.MultiSelect = False
         Me.DataGridView4.Name = "DataGridView4"
         Me.DataGridView4.RowHeadersVisible = False
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView4.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridView4.RowTemplate.Height = 40
         Me.DataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView4.Size = New System.Drawing.Size(1004, 500)
@@ -590,9 +625,10 @@ Partial Class Form1
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
     Friend WithEvents SplitContainer4 As System.Windows.Forms.SplitContainer
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
     Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
     Friend WithEvents Button4 As System.Windows.Forms.Button
-
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Label5 As Label
+    Friend WithEvents DateTimePicker2 As DateTimePicker
 End Class

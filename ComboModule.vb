@@ -13,10 +13,6 @@
 
         Select Case sender.Name.ToString
 
-            'Case "ComboBox4"
-            ' StartCombo(Form1.ComboBox3)
-
-
             Case Else
                 ComboRefreshData(sender)
 
@@ -28,7 +24,7 @@
 
         Select Case ctl.Name.ToString()
 
-            Case "ComboBox1", "ComboBox2", "ComboBox3", "ComboBox4", "ComboBox100"
+            Case "ComboBox1", "ComboBox2", "ComboBox3", "ComboBox100"
                 ctl.DataSource = OverClass.TempDataTable("SELECT Virus_ID, Description FROM tblVirusStrains " & _
                                                          "WHERE Redundant=FALSE")
                 ctl.ValueMember = "Virus_ID"
@@ -55,9 +51,6 @@
 
             Case "ComboBox3"
                 Grid = Form1.DataGridView3
-
-            Case "ComboBox4"
-                Grid = Form1.DataGridView4
 
             Case "ComboBox100"
                 Grid = SiteForm.DataGridView100

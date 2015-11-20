@@ -21,6 +21,10 @@
                 LabForm = New Form1
                 Form1.ShowDialog()
 
+            Case "Site_Lead"
+                SiteForm = New Site
+                SiteForm.ShowDialog()
+
         End Select
 
 

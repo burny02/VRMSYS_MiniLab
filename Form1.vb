@@ -54,7 +54,8 @@
                     "tblApp_Results b ON a.ID=b.APP_ID) INNER JOIN tblPatientDemographics c " &
                     " ON a.Patient_Attendees_ID=c.ID " &
                     "WHERE Virus_ID=" & Me.ComboBox2.SelectedValue &
-                    " AND Lab_QC=False " &
+                    " AND isnull(RESULT)=false " &
+                    "AND Lab_QC=False " &
                     "ORDER BY START ASC, Patient_Attendees_ID ASC"
 
                 OverClass.CreateDataSet(SQLCode, BindingSource1, DataGridView2)
@@ -134,41 +135,28 @@
                 ctl.Columns("Released").DisplayIndex = 7
 
             Case "DataGridView4"
-                If IsNothing(Me.ComboBox4.SelectedValue) Then Exit Sub
 
-                SQLCode = "SELECT Patient_Attendees_ID & ' - ' & Format(Date_Of_Birth,'dd-MMM-yyyy') AS Volunteer, Start AS Collection_Date, " & _
-                    "Result, Lab_QC_Person & ' - ' & Format(Lab_QC_Date,'dd-MMM-yyyy') AS QC, " & _
-                    "Released_By & ' - ' & Format(Released_Date,'dd-MMM-yyyy') AS Released " & _
-                    "FROM (tblAppointments a INNER JOIN " & _
-                    "tblApp_Results b ON a.ID=b.APP_ID) INNER JOIN tblPatientDemographics c " & _
-                    " ON a.Patient_Attendees_ID=c.ID " & _
-                    "WHERE Virus_ID=" & Me.ComboBox4.SelectedValue & _
-                    " ORDER BY START ASC, Patient_Attendees_ID ASC"
+                If IsNothing(LabForm) Then Exit Sub
+                If TabControl1.SelectedTab IsNot TabPage5 Then Exit Sub
+                If IsDBNull(Me.DateTimePicker1.Value) Then Exit Sub
+                If IsDBNull(Me.DateTimePicker2.Value) Then Exit Sub
+
+
+
+                SQLCode = "SELECT * FROM LabExport WHERE Collection_Date BETWEEN " _
+                & OverClass.SQLDate(Me.DateTimePicker1.Value) & " AND " & OverClass.SQLDate(Me.DateTimePicker2.Value)
 
                 OverClass.CreateDataSet(SQLCode, BindingSource1, DataGridView4)
 
                 ctl.ReadOnly = True
+                If OverClass.CurrentDataSet.Tables(0).Rows.Count = 0 Then
+                    ctl.Visible = False
+                    Exit Sub
+                End If
+                ctl.Visible = True
                 ctl.Columns("Collection_Date").HeaderText = "Collection Date"
-                ctl.Columns("Result").Visible = False
                 ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
 
-                Dim dt As DataTable
-                Dim cmb As New DataGridViewComboBoxColumn
-                dt = OverClass.TempDataTable("SELECT Display, ActValue FROM tblResults ORDER BY ACTValue ASC, Display ASC")
-                cmb.ValueMember = "ActValue"
-                cmb.DisplayMember = "Display"
-                cmb.DataPropertyName = OverClass.CurrentDataSet.Tables(0).Columns("Result").ToString
-                cmb.HeaderText = "Result"
-                cmb.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing
-                Dim i As Long = 1
-                Do While i <> 13000
-                    dt.Rows.Add(i, i)
-                    i += 1
-                Loop
-                cmb.DataSource = dt
-                cmb.ReadOnly = True
-                ctl.Columns.Add(cmb)
-                cmb.DisplayIndex = 3
 
             Case "DataGridView100"
 
@@ -228,9 +216,24 @@
 
             Case "DataGridView102"
 
-                SQLCode = "SELECT * FROM WhichTests"
+                If IsNothing(SiteForm) Then Exit Sub
+                If SiteForm.TabControl1.SelectedTab IsNot SiteForm.TabPage4 Then Exit Sub
+                If IsDBNull(SiteForm.DateTimePicker101.Value) Then Exit Sub
+                If IsDBNull(SiteForm.DateTimePicker102.Value) Then Exit Sub
+
+
+
+                SQLCode = "SELECT * FROM WhichTests WHERE Collection_Date BETWEEN " _
+                & OverClass.SQLDate(SiteForm.DateTimePicker101.Value) & " AND " & OverClass.SQLDate(SiteForm.DateTimePicker102.Value)
 
                 OverClass.CreateDataSet(SQLCode, SiteForm.BindingSource1, SiteForm.DataGridView102)
+
+                ctl.ReadOnly = True
+                If OverClass.CurrentDataSet.Tables(0).Rows.Count = 0 Then
+                    ctl.Visible = False
+                    Exit Sub
+                End If
+                ctl.Visible = True
 
                 Dim fonter As Font
 
@@ -244,9 +247,25 @@
 
             Case "DataGridView103"
 
-                SQLCode = "SELECT * FROM LabExport"
+                If IsNothing(SiteForm) Then Exit Sub
+                If SiteForm.TabControl1.SelectedTab IsNot SiteForm.TabPage5 Then Exit Sub
+                If IsDBNull(SiteForm.DateTimePicker103.Value) Then Exit Sub
+                If IsDBNull(SiteForm.DateTimePicker104.Value) Then Exit Sub
+
+
+                SQLCode = "Select * FROM SiteExport WHERE Collection_Date BETWEEN " _
+                & OverClass.SQLDate(SiteForm.DateTimePicker103.Value) & " AND " & OverClass.SQLDate(SiteForm.DateTimePicker104.Value)
 
                 OverClass.CreateDataSet(SQLCode, SiteForm.BindingSource1, SiteForm.DataGridView103)
+
+                ctl.ReadOnly = True
+                If OverClass.CurrentDataSet.Tables(0).Rows.Count = 0 Then
+                    ctl.Visible = False
+                    Exit Sub
+                End If
+                ctl.Visible = True
+
+
                 ctl.Columns("Collection_Date").DefaultCellStyle.Format = "dd-MMM-yyyy"
                 ctl.ReadOnly = True
 
@@ -288,17 +307,17 @@
 
         Select Case e.TabPage.Text
 
-            Case "InputLab"
+            Case "Input"
                 StartCombo(Me.ComboBox1)
 
-            Case "QCLab"
+            Case "QC"
                 StartCombo(Me.ComboBox2)
 
-            Case "ReleaseLab"
+            Case "Release"
                 StartCombo(Me.ComboBox3)
 
-            Case "All Results"
-                StartCombo(Me.ComboBox4)
+            Case "All QC'd Results"
+                ctl = DataGridView4
 
         End Select
 
@@ -335,6 +354,19 @@
             End If
 
         End If
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+
+        Call Specifics(DataGridView4)
+
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
+
+        Call Specifics(DataGridView4)
+
     End Sub
 End Class
 
